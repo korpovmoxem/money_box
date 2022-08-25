@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Money Box</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main_page.css') }}"
+    />
+  </head>
+  <body>
+    <h1 align="center">Money box</h1>
+    <h2 align="center">
+      Копилка помогает накопить нужную сумму за 100 дней
+      <br />
+      Правила копилки:
+      <br />
+      Сумма для накопления разбивается на 100 дней с одинаковой разницей между
+      двумя днями
+      <br />
+      Например: Если необходимо накопить 50 000 рублей, тогда в первый день
+      необходимо будет отложить 100 рублей,
+      <br />
+      Во второй день 200 рублей, в третий день 300 рублей и тд.
+      <br />
+      При этом погашать дни можно в любом порядке.
+    </h2>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2 align="center">
+      <a class="logging_page" href="{{ url_for('registration_page') }}">Хочу накопить деньги!</a>
+        <br>
+        <br>
+      <a class="auth_page" href="{{ url_for('login_page') }}">Уже коплю деньги</a>
+    </h2>
+    <p class="info_page">
+      <a href="{{ url_for('info_page') }}">Подробнее о проекте</a>
+    </p>
+  </body>
+</html>
