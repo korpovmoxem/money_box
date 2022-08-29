@@ -1,4 +1,4 @@
-from flask_login import UserMixin, login_user
+from flask_login import UserMixin
 
 from money_box import db, login_manager
 
