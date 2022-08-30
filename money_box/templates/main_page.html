@@ -9,8 +9,9 @@
     />
   </head>
   <body>
-    <h1 align="center">Money box</h1>
-    <h2 align="center">
+    <div><img class="title_image" src="/static/img/Money_box_title.png" alt="Money Box"></div>
+    <div class="title_text">
+    <p align="center">
       Копилка помогает накопить нужную сумму за 100 дней
       <br />
       Правила копилки:
@@ -24,20 +25,15 @@
       Во второй день 200 рублей, в третий день 300 рублей и тд.
       <br />
       При этом погашать дни можно в любом порядке.
-    </h2>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <h2 align="center">
-      <a class="registration_page" href="{{ url_for('registration_page') }}">Хочу накопить деньги!</a>
+    </div>
+    <p align="center">
+      <a class="buttons" href="{{ url_for('registration_page') }}">Хочу накопить деньги!</a>
+      <img class="pig1" src="/static/img/Pig_1.png">
         <br>
-        <br>
-      <a class="login_page" href="{{ url_for('login_page') }}">Уже коплю деньги</a>
-    </h2>
-    <p class="info_page">
+      <a class="buttons" href="{{ url_for('login_page') }}">Уже коплю деньги</a>
       <a href="{{ url_for('info_page') }}">Подробнее о проекте</a>
     </p>
+  <div>
+  </div>
   </body>
 </html>

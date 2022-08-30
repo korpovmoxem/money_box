@@ -1,0 +1,40 @@
+.popup {
+  width: 1000px;
+  height: 600px;
+  text-align: center;
+  padding: 15px;
+  border: 3px solid #0000cc;
+  border-radius: 10px;
+  color: #0000cc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: white;
+  font-size: 36px;
+}
+
+.popup_buttons {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 7%;
+}
+
+.popup_text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 7%;
+}
+
+.flash_message {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 120%;
+  font-size: 25px;
+  color: red;
+}

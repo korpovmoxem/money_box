@@ -1,9 +1,9 @@
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import render_template, request, redirect, flash, url_for
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
-from money_box.clases import UserAuth
+from money_box.clases import UserAuth, DayGoals
 
 
 @app.route('/')
@@ -29,6 +29,8 @@ def registration_page():
         elif password != password2 or password == '' or password2 == '':
             flash('Пароли не совпадают')
             return render_template('registration_page.html')
+        elif UserAuth.query.filter_by(login=login).first():
+            flash('Такой пользователь уже существует!')
         else:
             if len(password) < 6:
                 flash('Длина пароля должна быть не меньше 6 символов')
@@ -72,10 +74,24 @@ def login_out():
     return redirect((url_for('main_page')))
 
 
-@app.route('/money_box')
+@app.route('/money_box', methods=['GET', 'POST'])
 @login_required
 def money_box():
-    return render_template('money_box.html')
+    current_user_id = current_user.get_id()
+
+    goal_targer = request.form.get('goal_target')
+    if goal_targer:
+        if not goal_targer.isdigit():
+            flash('Необходимо ввести число')
+            return render_template('money_box.html',
+                            display=True)
+
+        return render_template('money_box.html',
+                               display=False)
+
+    if not DayGoals.query.filter_by(id=current_user_id).first():
+        return render_template('money_box.html',
+                               display=True)
 
 
 @app.after_request
