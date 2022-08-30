@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Авторизация</title>
+    <link rel="stylesheet" href="/static/css/login_page.css">
 </head>
 <body>
 {% with messages = get_flashed_messages() %}
@@ -15,20 +16,24 @@
   {% endif %}
 {% endwith %}
 <form method="post">
-    <table>
-        <tr>
-            <td>Логин</td>
-            <td><input type="text" name="login"></td>
-        </tr>
-        <tr>
-            <td>Пароль</td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td><a href="{{ url_for('registration_page') }}">Регистрация</a></td>
-            <td><input type="submit" value="Login"></td>
-        </tr>
-    </table>
+    <div class = "login_form">
+      <table class = "table">
+          <tr>
+              <td class = 'name_field'>Логин</td>
+              <td class = form_field><input type="text" name="login"></td>
+          </tr>
+          <tr>
+              <td class = 'name_field'>Пароль</td>
+              <td class = form_field><input type="password" name="password"></td>
+          </tr>
+          <tr class = "buttons">
+              <td colspan="2"><input type="submit" value="Войти"></td>
+            <tr class = "buttons">
+              <td colspan="2"><input type="submit" value="Регистрация"></td>
+          </tr>
+      </table>
+    </div>
+  </div>
 </form>
 </body>
 </html>

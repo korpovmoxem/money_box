@@ -1,0 +1,37 @@
+.login_form {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blue;
+  border-radius: 50px;
+  width: 800px;
+  height: 400px;
+}
+.table {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blue;
+  height: 300px;
+  width: 500px;
+}
+
+input {
+  height: 35px;
+  width: 350px;
+  border-radius: 10px;
+
+}
+
+.name_field {
+  font-size: 35px;
+  color: white;
+}
+
+.buttons {
+  transform: translate(15%, 30%);
+}
