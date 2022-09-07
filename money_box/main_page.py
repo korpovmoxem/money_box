@@ -113,11 +113,14 @@ def money_box():
 
     day_instances = get_day_instances(user.login)
     day_goals = get_day_goals(user.login)
-    current_sum = DayGoals.query.filter_by(login=user.login).first().current_sum
-    total_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
-    print(current_sum)
+    try:
+        current_sum = DayGoals.query.filter_by(login=user.login).first().current_sum
+        total_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
+    except AttributeError:
+        current_sum = 1
+        total_goal = 10
     return render_template('money_box.html',
-                           display=False, current_sum=current_sum, total_goal=total_goal,
+                           display=False, current_sum=current_sum, total_goal=total_goal, progress_percent=current_sum / total_goal * 100,
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],

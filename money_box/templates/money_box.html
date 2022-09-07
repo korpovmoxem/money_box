@@ -61,7 +61,7 @@
         <div
           class="progress-bar progress-bar-striped progress-bar-animated"
           role="progressbar"
-          style="width: {{current_sum / total_goal * 100}}%"
+          style="width: {{ progress_percent }}%"
           aria-valuenow="{{ current_sum }}"
           aria-valuemin="0"
           aria-valuemax="{{ total_goal }}"
