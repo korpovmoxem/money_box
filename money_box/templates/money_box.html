@@ -61,646 +61,546 @@
         <div
           class="progress-bar progress-bar-striped progress-bar-animated"
           role="progressbar"
-          style="width: 50%"
-          aria-valuenow="50000"
+          style="width: {{current_sum / total_goal * 100}}%"
+          aria-valuenow="{{ current_sum }}"
           aria-valuemin="0"
-          aria-valuemax="100000"
+          aria-valuemax="{{ total_goal }}"
         >
-          50000
+          {{ current_sum }}
         </div>
       </div>
     </header>
     <br />
+    <form method="post">
     <div class="container">
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_1_instance %}
-          disabled {% endif %}>
-            {{ day_1_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_1_instance %}
+          disabled {% endif %} value="{{ day_1_goal }}" name="day_1_button">
+        </div>
+        <div class="col">
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_2_instance %}
+          disabled {% endif %} value="{{ day_2_goal }}" name="day_2_button">
+        </div>
+        <div class="col">
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_3_instance %}
+          disabled {% endif %} value="{{ day_3_goal }}" name="day_3_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_2_instance %}
-          disabled {% endif %}>
-            {{ day_2_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_4_instance %}
+          disabled {% endif %} value="{{ day_4_goal }}" name="day_4_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_3_instance %}
-          disabled {% endif %}>
-            {{ day_3_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_5_instance %}
+          disabled {% endif %} value="{{ day_5_goal }}" name="day_5_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_4_instance %}
-          disabled {% endif %}>
-            {{ day_4_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_6_instance %}
+          disabled {% endif %} value="{{ day_6_goal }}" name="day_6_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_5_instance %}
-          disabled {% endif %}>
-            {{ day_5_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_7_instance %}
+          disabled {% endif %} value="{{ day_7_goal }}" name="day_7_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_6_instance %}
-          disabled {% endif %}>
-            {{ day_6_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_8_instance %}
+          disabled {% endif %} value="{{ day_8_goal }}" name="day_8_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_6_instance %}
-          disabled {% endif %}>
-            {{ day_6_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_9_instance %}
+          disabled {% endif %} value="{{ day_9_goal }}" name="day_9_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_7_instance %}
-          disabled {% endif %}>
-            {{ day_7_goal }}
-          </button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_8_instance %}
-          disabled {% endif %}>
-            {{ day_8_goal }}
-          </button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_9_instance %}
-          disabled {% endif %}>
-            {{ day_9_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_10_instance %}
+          disabled {% endif %} value="{{ day_10_goal }}" name="day_10_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_10_instance %}
-          disabled {% endif %}>
-            {{ day_10_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_11_instance %}
+          disabled {% endif %} value="{{ day_11_goal }}" name="day_11_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_11_instance %}
-          disabled {% endif %}>
-            {{ day_11_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_12_instance %}
+          disabled {% endif %} value="{{ day_12_goal }}" name="day_12_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_12_instance %}
-          disabled {% endif %}>
-            {{ day_12_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_13_instance %}
+          disabled {% endif %} value="{{ day_13_goal }}" name="day_13_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_13_instance %}
-          disabled {% endif %}>
-            {{ day_13_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_14_instance %}
+          disabled {% endif %} value="{{ day_14_goal }}" name="day_14_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_14_instance %}
-          disabled {% endif %}>
-            {{ day_14_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_15_instance %}
+          disabled {% endif %} value="{{ day_15_goal }}" name="day_15_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_15_instance %}
-          disabled {% endif %}>
-            {{ day_15_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_16_instance %}
+          disabled {% endif %} value="{{ day_16_goal }}" name="day_16_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_16_instance %}
-          disabled {% endif %}>
-            {{ day_16_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_17_instance %}
+          disabled {% endif %} value="{{ day_17_goal }}" name="day_17_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_17_instance %}
-          disabled {% endif %}>
-            {{ day_17_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_18_instance %}
+          disabled {% endif %} value="{{ day_18_goal }}" name="day_18_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_18_instance %}
-          disabled {% endif %}>
-            {{ day_18_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_19_instance %}
+          disabled {% endif %} value="{{ day_19_goal }}" name="day_19_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_19_instance %}
-          disabled {% endif %}>
-            {{ day_19_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_20_instance %}
+          disabled {% endif %} value="{{ day_20_goal }}" name="day_20_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_20_instance %}
-          disabled {% endif %}>
-            {{ day_20_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_21_instance %}
+          disabled {% endif %} value="{{ day_21_goal }}" name="day_21_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_21_instance %}
-          disabled {% endif %}>
-            {{ day_21_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_22_instance %}
+          disabled {% endif %} value="{{ day_22_goal }}" name="day_22_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_22_instance %}
-          disabled {% endif %}>
-            {{ day_22_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_23_instance %}
+          disabled {% endif %} value="{{ day_23_goal }}" name="day_23_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_23_instance %}
-          disabled {% endif %}>
-            {{ day_23_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_24_instance %}
+          disabled {% endif %} value="{{ day_24_goal }}" name="day_24_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_24_instance %}
-          disabled {% endif %}>
-            {{ day_24_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_25_instance %}
+          disabled {% endif %} value="{{ day_25_goal }}" name="day_25_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_25_instance %}
-          disabled {% endif %}>
-            {{ day_25_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_26_instance %}
+          disabled {% endif %} value="{{ day_26_goal }}" name="day_26_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if not day_26_instance %}
-          disabled {% endif %}>
-            {{ day_26_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_27_instance %}
+          disabled {% endif %} value="{{ day_27_goal }}" name="day_27_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_27_instance %}
-          disabled {% endif %}>
-            {{ day_27_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_28_instance %}
+          disabled {% endif %} value="{{ day_28_goal }}" name="day_28_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_28_instance %}
-          disabled {% endif %}>
-            {{ day_28_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_29_instance %}
+          disabled {% endif %} value="{{ day_29_goal }}" name="day_29_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_29_instance %}
-          disabled {% endif %}>
-            {{ day_29_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_30_instance %}
+          disabled {% endif %} value="{{ day_30_goal }}" name="day_30_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_30_instance %}
-          disabled {% endif %}>
-            {{ day_30_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_31_instance %}
+          disabled {% endif %} value="{{ day_31_goal }}" name="day_31_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_31_instance %}
-          disabled {% endif %}>
-            {{ day_31_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_32_instance %}
+          disabled {% endif %} value="{{ day_32_goal }}" name="day_32_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_32_instance %}
-          disabled {% endif %}>
-            {{ day_32_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_33_instance %}
+          disabled {% endif %} value="{{ day_33_goal }}" name="day_33_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_33_instance %}
-          disabled {% endif %}>
-            {{ day_33_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_34_instance %}
+          disabled {% endif %} value="{{ day_34_goal }}" name="day_34_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_34_instance %}
-          disabled {% endif %}>
-            {{ day_34_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_35_instance %}
+          disabled {% endif %} value="{{ day_35_goal }}" name="day_35_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_35_instance %}
-          disabled {% endif %}>
-            {{ day_35_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_36_instance %}
+          disabled {% endif %} value="{{ day_36_goal }}" name="day_36_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_36_instance %}
-          disabled {% endif %}>
-            {{ day_36_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_37_instance %}
+          disabled {% endif %} value="{{ day_37_goal }}" name="day_37_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_37_instance %}
-          disabled {% endif %}>
-            {{ day_37_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_38_instance %}
+          disabled {% endif %} value="{{ day_38_goal }}" name="day_38_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_38_instance %}
-          disabled {% endif %}>
-            {{ day_38_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_39_instance %}
+          disabled {% endif %} value="{{ day_39_goal }}" name="day_39_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_39_instance %}
-          disabled {% endif %}>
-            {{ day_39_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_40_instance %}
+          disabled {% endif %} value="{{ day_40_goal }}" name="day_40_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_40_instance %}
-          disabled {% endif %}>
-            {{ day_40_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_41_instance %}
+          disabled {% endif %} value="{{ day_41_goal }}" name="day_41_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_41_instance %}
-          disabled {% endif %}>
-            {{ day_41_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_42_instance %}
+          disabled {% endif %} value="{{ day_42_goal }}" name="day_42_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_42_instance %}
-          disabled {% endif %}>
-            {{ day_42_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_43_instance %}
+          disabled {% endif %} value="{{ day_43_goal }}" name="day_43_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_43_instance %}
-          disabled {% endif %}>
-            {{ day_43_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_44_instance %}
+          disabled {% endif %} value="{{ day_44_goal }}" name="day_44_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_44_instance %}
-          disabled {% endif %}>
-            {{ day_44_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_45_instance %}
+          disabled {% endif %} value="{{ day_45_goal }}" name="day_45_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_45_instance %}
-          disabled {% endif %}>
-            {{ day_45_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_46_instance %}
+          disabled {% endif %} value="{{ day_46_goal }}" name="day_46_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_46_instance %}
-          disabled {% endif %}>
-            {{ day_46_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_47_instance %}
+          disabled {% endif %} value="{{ day_47_goal }}" name="day_47_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_47_instance %}
-          disabled {% endif %}>
-            {{ day_47_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_48_instance %}
+          disabled {% endif %} value="{{ day_48_goal }}" name="day_48_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_48_instance %}
-          disabled {% endif %}>
-            {{ day_48_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_49_instance %}
+          disabled {% endif %} value="{{ day_49_goal }}" name="day_49_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_49_instance %}
-          disabled {% endif %}>
-            {{ day_49_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_50_instance %}
+          disabled {% endif %} value="{{ day_50_goal }}" name="day_50_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_50_instance %}
-          disabled {% endif %}>
-            {{ day_50_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_51_instance %}
+          disabled {% endif %} value="{{ day_51_goal }}" name="day_51_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_51_instance %}
-          disabled {% endif %}>
-            {{ day_51_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_52_instance %}
+          disabled {% endif %} value="{{ day_52_goal }}" name="day_52_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_52_instance %}
-          disabled {% endif %}>
-            {{ day_52_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_53_instance %}
+          disabled {% endif %} value="{{ day_53_goal }}" name="day_53_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_53_instance %}
-          disabled {% endif %}>
-            {{ day_53_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_54_instance %}
+          disabled {% endif %} value="{{ day_54_goal }}" name="day_54_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_54_instance %}
-          disabled {% endif %}>
-            {{ day_54_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_55_instance %}
+          disabled {% endif %} value="{{ day_55_goal }}" name="day_55_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_55_instance %}
-          disabled {% endif %}>
-            {{ day_55_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_56_instance %}
+          disabled {% endif %} value="{{ day_56_goal }}" name="day_56_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_56_instance %}
-          disabled {% endif %}>
-            {{ day_56_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_57_instance %}
+          disabled {% endif %} value="{{ day_57_goal }}" name="day_57_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_57_instance %}
-          disabled {% endif %}>
-            {{ day_57_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_58_instance %}
+          disabled {% endif %} value="{{ day_58_goal }}" name="day_58_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_58_instance %}
-          disabled {% endif %}>
-            {{ day_58_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_59_instance %}
+          disabled {% endif %} value="{{ day_59_goal }}" name="day_59_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_59_instance %}
-          disabled {% endif %}>
-            {{ day_59_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_60_instance %}
+          disabled {% endif %} value="{{ day_60_goal }}" name="day_60_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_60_instance %}
-          disabled {% endif %}>
-            {{ day_60_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_61_instance %}
+          disabled {% endif %} value="{{ day_61_goal }}" name="day_61_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_61_instance %}
-          disabled {% endif %}>
-            {{ day_61_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_62_instance %}
+          disabled {% endif %} value="{{ day_62_goal }}" name="day_62_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_62_instance %}
-          disabled {% endif %}>
-            {{ day_62_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_63_instance %}
+          disabled {% endif %} value="{{ day_63_goal }}" name="day_63_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_63_instance %}
-          disabled {% endif %}>
-            {{ day_63_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_64_instance %}
+          disabled {% endif %} value="{{ day_64_goal }}" name="day_64_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_64_instance %}
-          disabled {% endif %}>
-            {{ day_64_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_65_instance %}
+          disabled {% endif %} value="{{ day_65_goal }}" name="day_65_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_65_instance %}
-          disabled {% endif %}>
-            {{ day_65_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_66_instance %}
+          disabled {% endif %} value="{{ day_66_goal }}" name="day_66_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_66_instance %}
-          disabled {% endif %}>
-            {{ day_66_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_67_instance %}
+          disabled {% endif %} value="{{ day_67_goal }}" name="day_67_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_67_instance %}
-          disabled {% endif %}>
-            {{ day_67_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_68_instance %}
+          disabled {% endif %} value="{{ day_68_goal }}" name="day_68_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_68_instance %}
-          disabled {% endif %}>
-            {{ day_68_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_69_instance %}
+          disabled {% endif %} value="{{ day_69_goal }}" name="day_69_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_69_instance %}
-          disabled {% endif %}>
-            {{ day_69_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_70_instance %}
+          disabled {% endif %} value="{{ day_70_goal }}" name="day_70_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_70_instance %}
-          disabled {% endif %}>
-            {{ day_70_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_71_instance %}
+          disabled {% endif %} value="{{ day_71_goal }}" name="day_71_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_71_instance %}
-          disabled {% endif %}>
-            {{ day_71_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_72_instance %}
+          disabled {% endif %} value="{{ day_72_goal }}" name="day_72_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_72_instance %}
-          disabled {% endif %}>
-            {{ day_72_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_73_instance %}
+          disabled {% endif %} value="{{ day_73_goal }}" name="day_73_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_73_instance %}
-          disabled {% endif %}>
-            {{ day_73_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_74_instance %}
+          disabled {% endif %} value="{{ day_74_goal }}" name="day_74_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_74_instance %}
-          disabled {% endif %}>
-            {{ day_75_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_75_instance %}
+          disabled {% endif %} value="{{ day_75_goal }}" name="day_75_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_76_instance %}
-          disabled {% endif %}>
-            {{ day_76_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_76_instance %}
+          disabled {% endif %} value="{{ day_76_goal }}" name="day_76_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_77_instance %}
-          disabled {% endif %}>
-            {{ day_77_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_77_instance %}
+          disabled {% endif %} value="{{ day_77_goal }}" name="day_77_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_78_instance %}
-          disabled {% endif %}>
-            {{ day_78_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_78_instance %}
+          disabled {% endif %} value="{{ day_78_goal }}" name="day_78_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_79_instance %}
-          disabled {% endif %}>
-            {{ day_79_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_79_instance %}
+          disabled {% endif %} value="{{ day_79_goal }}" name="day_79_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_80_instance %}
-          disabled {% endif %}>
-            {{ day_80_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_80_instance %}
+          disabled {% endif %} value="{{ day_80_goal }}" name="day_80_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_81_instance %}
-          disabled {% endif %}>
-            {{ day_81_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_81_instance %}
+          disabled {% endif %} value="{{ day_81_goal }}" name="day_81_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_82_instance %}
-          disabled {% endif %}>
-            {{ day_82_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_82_instance %}
+          disabled {% endif %} value="{{ day_82_goal }}" name="day_82_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_83_instance %}
-          disabled {% endif %}>
-            {{ day_83_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_83_instance %}
+          disabled {% endif %} value="{{ day_83_goal }}" name="day_83_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_84_instance %}
-          disabled {% endif %}>
-            {{ day_84_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_84_instance %}
+          disabled {% endif %} value="{{ day_84_goal }}" name="day_84_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_85_instance %}
-          disabled {% endif %}>
-            {{ day_85_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_85_instance %}
+          disabled {% endif %} value="{{ day_85_goal }}" name="day_85_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_86_instance %}
-          disabled {% endif %}>
-            {{ day_86_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_86_instance %}
+          disabled {% endif %} value="{{ day_86_goal }}" name="day_86_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_87_instance %}
-          disabled {% endif %}>
-            {{ day_87_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_87_instance %}
+          disabled {% endif %} value="{{ day_87_goal }}" name="day_87_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_88_instance %}
-          disabled {% endif %}>
-            {{ day_88_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_88_instance %}
+          disabled {% endif %} value="{{ day_88_goal }}" name="day_88_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_89_instance %}
-          disabled {% endif %}>
-            {{ day_89_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_89_instance %}
+          disabled {% endif %} value="{{ day_89_goal }}" name="day_89_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_90_instance %}
-          disabled {% endif %}>
-            {{ day_90_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_90_instance %}
+          disabled {% endif %} value="{{ day_90_goal }}" name="day_90_button">
           </button>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_91_instance %}
-          disabled {% endif %}>
-            {{ day_91_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_91_instance %}
+          disabled {% endif %} value="{{ day_91_goal }}" name="day_91_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_92_instance %}
-          disabled {% endif %}>
-            {{ day_92_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_92_instance %}
+          disabled {% endif %} value="{{ day_92_goal }}" name="day_92_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_93_instance %}
-          disabled {% endif %}>
-            {{ day_93_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_93_instance %}
+          disabled {% endif %} value="{{ day_93_goal }}" name="day_93_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_94_instance %}
-          disabled {% endif %}>
-            {{ day_94_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_94_instance %}
+          disabled {% endif %} value="{{ day_94_goal }}" name="day_94_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_95_instance %}
-          disabled {% endif %}>
-            {{ day_95_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_95_instance %}
+          disabled {% endif %} value="{{ day_95_goal }}" name="day_95_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_96_instance %}
-          disabled {% endif %}>
-            {{ day_96_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_96_instance %}
+          disabled {% endif %} value="{{ day_96_goal }}" name="day_96_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_97_instance %}
-          disabled {% endif %}>
-            {{ day_97_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_97_instance %}
+          disabled {% endif %} value="{{ day_97_goal }}" name="day_97_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_98_instance %}
-          disabled {% endif %}>
-            {{ day_98_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_98_instance %}
+          disabled {% endif %} value="{{ day_98_goal }}" name="day_98_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_99_instance %}
-          disabled {% endif %}>
-            {{ day_99_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_99_instance %}
+          disabled {% endif %} value="{{ day_99_goal }}" name="day_99_button">
           </button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-outline-primary btn-lg" {% if day_100_instance %}
-          disabled {% endif %}>
-            {{ day_100_goal }}
+          <input type="submit" class="btn btn-outline-primary btn-lg" {% if day_100_instance %}
+          disabled {% endif %} value="{{ day_100_goal }}" name="day_100_button">
           </button>
         </div>
       </div>
     </div>
+      </form>
   </body>
 </html>

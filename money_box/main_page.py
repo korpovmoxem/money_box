@@ -4,7 +4,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
 from money_box.clases import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
-    , get_day_instances, get_day_goals
+    , get_day_instances, get_day_goals, update_day_instance
 
 
 @app.route('/')
@@ -81,6 +81,21 @@ def money_box():
     current_user_id = current_user.get_id()
     user = UserAuth.query.filter_by(id=current_user_id).first()
 
+    try:
+        if request.method == 'POST':
+            buttons_list = []
+            for i in range(1, 101):
+                day_instance = request.form.get(f"day_{i}_button")
+                print(day_instance)
+                user_sum = DayGoals.query.filter_by(login=user.login).first()
+                if day_instance is not None:
+                    user_sum.current_sum += int(day_instance)
+                buttons_list.append(day_instance)
+            update_day_instance(user.login, buttons_list)
+    except AttributeError:
+        pass
+
+
     goal_target = request.form.get('goal_target')
     if goal_target:
         if not goal_target.isdigit():
@@ -98,8 +113,11 @@ def money_box():
 
     day_instances = get_day_instances(user.login)
     day_goals = get_day_goals(user.login)
+    current_sum = DayGoals.query.filter_by(login=user.login).first().current_sum
+    total_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
+    print(current_sum)
     return render_template('money_box.html',
-                           display=False,
+                           display=False, current_sum=current_sum, total_goal=total_goal,
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],
@@ -117,7 +135,7 @@ def money_box():
                            day_43_instance=day_instances[42], day_44_instance=day_instances[43], day_45_instance=day_instances[44],
                            day_46_instance=day_instances[45], day_47_instance=day_instances[46], day_48_instance=day_instances[47],
                            day_49_instance=day_instances[48], day_50_instance=day_instances[49], day_51_instance=day_instances[50],
-                           day_52_instance=day_instances[51], day_53_instance=day_instances[52], day_54_instance=day_instances[51],
+                           day_52_instance=day_instances[51], day_53_instance=day_instances[52], day_54_instance=day_instances[53],
                            day_55_instance=day_instances[54], day_56_instance=day_instances[55], day_57_instance=day_instances[56],
                            day_58_instance=day_instances[57], day_59_instance=day_instances[58], day_60_instance=day_instances[59],
                            day_61_instance=day_instances[60], day_62_instance=day_instances[61], day_63_instance=day_instances[62],
@@ -131,7 +149,7 @@ def money_box():
                            day_85_instance=day_instances[84], day_86_instance=day_instances[85], day_87_instance=day_instances[86],
                            day_88_instance=day_instances[87], day_89_instance=day_instances[88], day_90_instance=day_instances[89],
                            day_91_instance=day_instances[90], day_92_instance=day_instances[91], day_93_instance=day_instances[92],
-                           day_94_instance=day_instances[93], day_95_instance=day_instances[94], day_96_instance=day_instances[97],
+                           day_94_instance=day_instances[93], day_95_instance=day_instances[94], day_96_instance=day_instances[95],
                            day_97_instance=day_instances[96], day_98_instance=day_instances[97], day_99_instance=day_instances[98],
                            day_100_instance=day_instances[99],
                            day_1_goal=day_goals[0], day_2_goal=day_goals[1], day_3_goal=day_goals[2],
