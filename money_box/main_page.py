@@ -81,16 +81,18 @@ def money_box():
     current_user_id = current_user.get_id()
     user = UserAuth.query.filter_by(id=current_user_id).first()
 
+    # Реакция на нажатие кнопок
     try:
         if request.method == 'POST':
             buttons_list = []
             for i in range(1, 101):
+                # Получение значения кнопки
                 day_instance = request.form.get(f"day_{i}_button")
-                print(day_instance)
-                user_sum = DayGoals.query.filter_by(login=user.login).first()
                 if day_instance is not None:
+                    # Суммирование накопленных денег
                     user_sum.current_sum += int(day_instance)
                 buttons_list.append(day_instance)
+            # Обновления состояния кнопок
             update_day_instance(user.login, buttons_list)
     except AttributeError:
         pass
