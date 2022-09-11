@@ -1,0 +1,174 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: 242121;
+}
+
+.container {
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+.home-buttons {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-buttons :hover {
+    background-color: #fff;
+    color: #242121;
+    transition: 0.4s ease;
+}
+
+
+.button-login, .button-registration {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EFC454;
+    height: 60px;
+    width: 300px;
+    color: #242121;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 30px;    
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    color: inherit; 
+    margin-bottom: 30px;
+}
+
+.button-login hover {
+    color: #fff;
+}
+
+.button-registration {
+    background-color: #FC8A91;
+}
+
+
+.home {
+    padding-top: 130px;
+    padding-bottom: 175px;
+    height: 895px;
+    position: relative;
+    height: 100vh;
+}
+
+.home-content{
+    max-width: 440px;
+}
+
+.home-heading {
+    margin-bottom: 30px;
+    color: #EFC454;
+    font-size: 65px;
+}
+
+.home-text {
+    color: #fff;
+    line-height: 150%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 21px;
+}
+
+.home-bg-img {
+    background-color: #242121;  
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.home-bg-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.title-field {
+    background-color: aqua;
+}
+
+
+
+
+
+
+    /* Utility */
+
+.visually-hidden{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    display: block;
+    margin-left: -10000px;
+    background: transparent;
+    font-size: 0;
+}
+
+.none {
+    display: none!important;
+}
+
+    /* Grid */
+
+.container {
+    width: 1400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1300px) {
+    .home {
+        padding: 50px;
+        padding-top: 40px;
+    }
+
+    .home-heading {
+        margin-bottom: 0px;
+    }
+
+    @media (max-width: 700px) {
+        .home {
+            padding: 50px;
+            padding-top: 150px;
+        }
+    
+        .home-heading {
+            margin-bottom: 0px;
+            font-size: 80px;
+        }
+
+        .home-text {
+            font-size: 30px;
+        }
+
+        .home-bg-img img {
+            display: none;
+        }
+
+        .home-buttons a {
+            width: 400px;
+            height: 80px;
+            font-size: 26px;
+        }
+
+        .home-content{
+            max-width: 100%;
+        }

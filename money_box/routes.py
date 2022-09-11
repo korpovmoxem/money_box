@@ -3,13 +3,13 @@ from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
-from money_box.clases import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
+from money_box.tools import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
     , get_day_instances, get_day_goals, update_day_instance
 
 
 @app.route('/')
-def main_page():
-    return render_template('main_page.html')
+def home_page():
+    return render_template('home_page.html')
 
 
 @app.route('/info')
@@ -24,17 +24,18 @@ def registration_page():
     password2 = request.form.get('password2')
 
     if request.method == 'POST':
+        print('kek')
         if not (login or password or password2):
-            flash('Необходимо заполнить все поля')
+            flash('Необходимо заполнить все поля!')
             return render_template('registration_page.html')
         elif password != password2 or password == '' or password2 == '':
-            flash('Пароли не совпадают')
+            flash('Пароли не совпадают!')
             return render_template('registration_page.html')
         elif UserAuth.query.filter_by(login=login).first():
             flash('Такой пользователь уже существует!')
         else:
             if len(password) < 6:
-                flash('Длина пароля должна быть не меньше 6 символов')
+                flash('Длина пароля должна быть не меньше 6 символов!')
 
             hash_password = generate_password_hash(password)
             new_user = UserAuth(login=login, password=hash_password)
@@ -86,7 +87,6 @@ def money_box():
             buttons_list = []
             for i in range(1, 101):
                 day_instance = request.form.get(f"day_{i}_button")
-                print(day_instance)
                 user_sum = DayGoals.query.filter_by(login=user.login).first()
                 if day_instance is not None:
                     user_sum.current_sum += int(day_instance)

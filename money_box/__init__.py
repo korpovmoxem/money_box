@@ -11,4 +11,4 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 
 
-import money_box.main_page, money_box.data_base
+import money_box.routes, money_box.create_data_base

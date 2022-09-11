@@ -1,0 +1,64 @@
+.header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #676767;
+    background-color: #EFC454;
+}
+
+body {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 20px;
+    color: 242121;
+}
+
+.container {
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.header-nav {
+    color: 242121;
+    margin-right: 100px;
+
+}
+
+.header-nav ul {
+    display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
+
+}
+
+.header-nav li + li {
+    margin-left: 70px;
+
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: inherit; 
+    transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+    color: green;
+}
+
+.header-contacts > * + *{
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+
