@@ -1,3 +1,10 @@
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
 .header {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -12,20 +19,13 @@ body {
     color: 242121;
 }
 
-.container {
+.header-container {
     font-family: 'Roboto';
     font-weight: 300;
 }
 
 ul {
     list-style-type: none;
-}
-
-.header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 400;
 }
 
 .header-nav {
