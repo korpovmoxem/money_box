@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <link
+    rel="stylesheet"
+    href="/static/css/header.css"
+  />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Копилка</title>
     <link rel="stylesheet" href="/static/css/money_box.css" />
@@ -32,6 +36,8 @@
     </style>
   </head>
   <body>
+    {% include 'header.html' %}
+    <main>
     <form method="post">
       <div class="overlay">
         <div class="popup">
@@ -55,7 +61,7 @@
         </div>
       </div>
     </form>
-    <header class="header">
+    <div class="title">
       <h1 align="center">Твоя копилка</h1>
       <h2 align="center">Тебе удалось накопить:</h2>
       <div class="progress" style="height: 30px">
@@ -70,8 +76,7 @@
           {{ current_sum }}
         </div>
       </div>
-    </header>
-    <br />
+    </div>
     <form method="post">
     <div class="container">
       <div class="row">
@@ -603,5 +608,10 @@
       </div>
     </div>
       </form>
+      <div class="money-box-bg-img">
+        <img src="/static/img/money-box-bg.jpg" alt="Money-box cover">
+    </div> 
+    </main>
+    {% include 'footer.html' %}
   </body>
 </html>

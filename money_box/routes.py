@@ -19,6 +19,7 @@ def info_page():
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration_page():
+    email = request.form.get('email')
     login = request.form.get('login')
     password = request.form.get('password')
     password2 = request.form.get('password2')
@@ -26,19 +27,26 @@ def registration_page():
     if request.method == 'POST':
         print('kek')
         if not (login or password or password2):
-            flash('Необходимо заполнить все поля!')
-            return render_template('registration_page.html')
+            flash('Необходимо заполнить все поля')
+        elif '@' not in email or '.' not in email:
+            flash('Некорректный email')
         elif password != password2 or password == '' or password2 == '':
-            flash('Пароли не совпадают!')
+            flash('Пароли не совпадают')
+        elif len(login) < 5:
+            flash('Длина логина должны быть не меньше 5 символов')
+        elif len(password) < 6:
+            flash('Длина пароля должна быть не меньше 6 символов')
             return render_template('registration_page.html')
+        elif UserAuth.query.filter_by(email=email).first():
+            flash('Пользователь с таким email уже существует')
         elif UserAuth.query.filter_by(login=login).first():
-            flash('Такой пользователь уже существует!')
+            flash('Пользователь с таким логином уже существует')
         else:
             if len(password) < 6:
-                flash('Длина пароля должна быть не меньше 6 символов!')
+                flash('Длина пароля должна быть не меньше 6 символов')
 
             hash_password = generate_password_hash(password)
-            new_user = UserAuth(login=login, password=hash_password)
+            new_user = UserAuth(login=login, email=email, password=hash_password)
             db.session.add(new_user)
             db.session.commit()
 
@@ -50,22 +58,26 @@ def registration_page():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    login = request.form.get('login')
+    login_email = request.form.get('login')
     password = request.form.get('password')
 
-    if login and password:
-         user = UserAuth.query.filter_by(login=login).first()
-
-         if user and check_password_hash(user.password, password):
-            login_user(user)
-            next_page = request.args.get('next')
-
-            return redirect(url_for('money_box'))
-
-         else:
-            flash('Логин или пароль неверны')
-    else:
-        flash('Необходимо заполнить поля "Логин" и "Пароль"')
+    if request.method == 'POST':
+        if login_email and password:
+             user = UserAuth.query.filter_by(login=login_email).first()
+             if user and check_password_hash(user.password, password):
+                login_user(user)
+                next_page = request.args.get('next')
+                return redirect(url_for('money_box'))
+             else:
+                user = UserAuth.query.filter_by(email=login_email).first()
+                if user and check_password_hash(user.password, password):
+                    login_user(user)
+                    next_page = request.args.get('next')
+                    return redirect(url_for('money_box'))
+                else:
+                    flash('Логин/email или пароль неверны')
+        else:
+            flash('Необходимо заполнить поля "Логин" и "Пароль"')
     return render_template('login_page.html')
 
 
@@ -81,6 +93,7 @@ def login_out():
 def money_box():
     current_user_id = current_user.get_id()
     user = UserAuth.query.filter_by(id=current_user_id).first()
+    goal_target = request.form.get('goal_target')
 
     try:
         if request.method == 'POST':
@@ -92,11 +105,9 @@ def money_box():
                     user_sum.current_sum += int(day_instance)
                 buttons_list.append(day_instance)
             update_day_instance(user.login, buttons_list)
-    except AttributeError:
+    except:
         pass
 
-
-    goal_target = request.form.get('goal_target')
     if goal_target:
         if not goal_target.isdigit():
             flash('Необходимо ввести число')

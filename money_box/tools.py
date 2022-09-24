@@ -5,6 +5,7 @@ from money_box import db, login_manager
 class UserAuth(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(128), nullable=False, unique=True)
+    email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
 
 class DayGoals(db.Model):
@@ -337,7 +338,6 @@ def get_day_instances(user_login):
 def update_day_instance(user_login, buttons_list):
     user = DayInstances.query.filter_by(login=user_login).first()
     # Получение накопленной суммы из БД
-    ind = buttons_list.index()
     user.day_1 = buttons_list[0] if buttons_list[0] is not None else user.day_1
     user.day_2 = buttons_list[1] if buttons_list[1] is not None else user.day_2
     user.day_3 = buttons_list[2] if buttons_list[2] is not None else user.day_3

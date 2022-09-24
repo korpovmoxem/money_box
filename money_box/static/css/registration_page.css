@@ -40,7 +40,11 @@
 
 .title-field{
     margin-top: 20px;
-    color: #242121;
+    color: #242121;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: 242121;
 }
 
 .field {
@@ -50,7 +54,17 @@
 .field input {
     border-radius: 10px;
     border-width: 0px;
+    min-height: 30px;
+    text-align: center;
 }
+
+.field input[type="text"] {
+    color: #242121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: 242121;
+  }
 
 .registration-button {
     margin-top: 25px;
@@ -64,6 +78,10 @@
     border-width: 0px;
     border-color: #fdda80;
     color: #242121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: 242121;
 }
 
 .registration-button input:hover {
@@ -82,7 +100,12 @@
 .flashes {
     display: flex;
     justify-content: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
 }
+
    /* Utility */
 
    .visually-hidden{
@@ -110,27 +133,3 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-@media (max-width: 1100px) {
-    .home {
-        padding: 50px;
-        padding-top: 30px;
-    }
-
-    .home-heading {
-        margin-bottom: 0px;
-    }
-
-    @media (max-width: 600px) {
-        .home {
-            padding: 50px;
-            padding-top: 150px;
-        }
-    
-        .home-heading {
-            margin-bottom: 0px;
-        }
-
-        .home-bg-img img {
-            display: none;
-        }

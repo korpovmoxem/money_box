@@ -38,3 +38,29 @@
   font-size: 25px;
   color: red;
 }
+
+.money-box-bg-img {
+  background-color: #242121;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.money-box-bg-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
