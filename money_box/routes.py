@@ -33,7 +33,7 @@ def registration_page():
         elif password != password2 or password == '' or password2 == '':
             flash('Пароли не совпадают')
         elif len(login) < 5:
-            flash('Длина логина должны быть не меньше 5 символов')
+            flash('Длина логина должна быть не меньше 5 символов')
         elif len(password) < 6:
             flash('Длина пароля должна быть не меньше 6 символов')
             return render_template('registration_page.html')

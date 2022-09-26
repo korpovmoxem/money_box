@@ -1,3 +1,57 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: 242121;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-color: #242121!important;
+}
+
+.container {
+  justify-content: center;
+  font-family: 'Roboto';
+  font-weight: 300;
+  width: 1400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px; 
+}
+
+.container input {
+  margin: auto;
+  margin-top: 25px  ;
+}
+
+.btn-outline-primary {
+  background-color: #EFC454!important;
+  background: linear-gradient(to bottom, #f0cb6d, #EFC454);
+  border-color: #000!important;
+  color: #000!important;
+
+}
+
+.btn-outline-primary[disabled] {
+  background: #292929!important;
+  color: #FC8A91!important;
+  border-color: #FC8A91!important;
+}
+
+.btn-outline-primary:active, .btn-outline-primary:focus {
+  box-shadow: none!important;
+  color: #FC8A91 !important;
+  background-color: #FC8A91 !important;
+  border-color: #FC8A91 !important;
+}
+
+.btn-outline-primary:hover {
+  transition: 0.5!important;
+  background: #EFC454!important;
+}
+
 .popup {
   width: 1000px;
   height: 600px;
@@ -64,3 +118,10 @@
   font-size: 18px;
 }
 
+h1, h2 {
+  text-shadow: 4px 3px #efc35441;
+}
+
+.progress {
+  margin-top: 30px;
+}
