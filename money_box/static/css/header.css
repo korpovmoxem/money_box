@@ -10,13 +10,13 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #676767;
     background-color: #EFC454;
+    max-height: 100px;
 }
 
 body {
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 20px;
-    color: 242121;
+    font-size: 17px;
 }
 
 .header-container {
@@ -29,21 +29,17 @@ ul {
 }
 
 .header-nav {
-    color: 242121;
     margin-right: 100px;
-
 }
 
 .header-nav ul {
     display: flex;
     margin-bottom: auto;
     margin-top: auto;
-
 }
 
 .header-nav li + li {
     margin-left: 70px;
-
 }
 
 .header-nav a {

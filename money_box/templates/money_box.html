@@ -39,7 +39,6 @@
   </head>
   <body>
     {% include 'header.html' %}
-    <main>
     <form method="post">
       <div class="overlay">
         <div class="popup">
@@ -60,6 +59,27 @@
           </div>
         </div>
       </div>
+          <!-- Модальное окно -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Новая цель накопления</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="goal_target">
+                    <input type="text" name="goal_target" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                  <button type="button" class="btn btn-primary">Изменить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <main>
     </form>
     <div class="title">
       <div class="change-goal">
@@ -73,8 +93,9 @@
         Управление
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Изменить цель</a></li>
+        <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Изменить цель</button></li>
         <li><a class="dropdown-item" href="#">История</a></li>
+        <li><a class="dropdown-item" href="#">Telegram бот</a></li>
         <li><a class="dropdown-item" href="#">Выйти</a></li>
       </ul>
     </div>
