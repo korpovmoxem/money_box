@@ -59,26 +59,6 @@
           </div>
         </div>
       </div>
-          <!-- Модальное окно -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Новая цель накопления</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="goal_target">
-                    <input type="text" name="goal_target" />
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                  <button type="button" class="btn btn-primary">Изменить</button>
-                </div>
-              </div>
-            </div>
-          </div>
         <main>
     </form>
     <div class="title">
@@ -86,7 +66,7 @@
       </div>
       <div class="progress-text">
       <h1 align="center">Твоя копилка</h1>
-      <h2 align="center">Тебе удалось накопить:</h2>
+      <h2 align="center">Цель: {{ current_goal }}</h2>
     </div>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,6 +93,27 @@
         </div>
       </div>
     </div>
+    <!-- Модальное окно -->
+    <form method="post">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Новая цель накопления</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <div class="goal_target">
+              <input type="text" name="new_goal_target">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="submit_button"><input type="submit" value="Изменить"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
     <form method="post">
       <div class="container">
         <div class="container text-center">

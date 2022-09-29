@@ -1,13 +1,13 @@
 .header-row {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
     font-weight: 400;
 }
 
 .header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #676767;
     background-color: #EFC454;
     max-height: 100px;
@@ -39,17 +39,17 @@ ul {
 }
 
 .header-nav li + li {
-    margin-left: 70px;
+    margin-left: 100px;
 }
 
 .header-nav a {
     text-decoration: none;
     color: inherit; 
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .header-nav a:hover {
-    color: green;
+    color: white;
 }
 
 .header-contacts > * + *{

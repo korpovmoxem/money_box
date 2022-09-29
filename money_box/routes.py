@@ -4,7 +4,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
 from money_box.tools import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
-    , get_day_instances, get_day_goals, update_day_instance
+    , get_day_instances, get_day_goals, update_day_instance, change_total_goal
 
 
 @app.route('/')
@@ -25,7 +25,6 @@ def registration_page():
     password2 = request.form.get('password2')
 
     if request.method == 'POST':
-        print('kek')
         if not (login or password or password2):
             flash('Необходимо заполнить все поля')
         elif '@' not in email or '.' not in email:
@@ -94,6 +93,8 @@ def money_box():
     current_user_id = current_user.get_id()
     user = UserAuth.query.filter_by(id=current_user_id).first()
     goal_target = request.form.get('goal_target')
+    current_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
+    new_goal_target = request.form.get('new_goal_target')
 
     try:
         if request.method == 'POST':
@@ -113,10 +114,16 @@ def money_box():
             flash('Необходимо ввести число')
             return render_template('money_box.html',
                             display=True)
-
         day_goals = create_day_goals(goal_target)
         fill_days_db(user.login, day_goals, goal_target)
+
+    # Изменение цели
+    elif new_goal_target:
+        change_total_goal(new_goal_target, user.login)
+        day_goals = create_day_goals(new_goal_target)
+        fill_days_db(user.login, day_goals, new_goal_target)
         fill_day_instances(user.login)
+        current_goal = new_goal_target
 
     if not DayGoals.query.filter_by(login=user.login).first():
         return render_template('money_box.html',
@@ -132,6 +139,7 @@ def money_box():
         total_goal = 10
     return render_template('money_box.html',
                            display=False, current_sum=current_sum, total_goal=total_goal, progress_percent=current_sum / total_goal * 100,
+                           current_goal=current_goal,
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],

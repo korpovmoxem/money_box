@@ -130,6 +130,10 @@ body {
     margin-right: auto;
 }
 
+.mobile-img {
+    display: none;
+}
+
 @media (max-width: 700px) {
     .home {
         padding: 50px;
@@ -158,5 +162,11 @@ body {
 
     .home-content{
         max-width: 100%;
+    }
+
+    .mobile-img {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
     }
 }

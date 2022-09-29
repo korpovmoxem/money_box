@@ -255,13 +255,140 @@ def create_day_goals(goal):
 
     return(days)
 
-def fill_day_instances(user_login):
-    new_user_instances = DayInstances(login=user_login)
-    db.session.add(new_user_instances)
+def change_total_goal(total_goal, login):
+    user = DayGoals.query.filter_by(login=login).first()
+    user.total_goal = total_goal
     db.session.commit()
 
+def fill_day_instances(user_login):
+
+    # Обнуление состояния кнопок дял существующего пользователя
+    if DayInstances.query.filter_by(login=user_login):
+        user = DayInstances.query.filter_by(login=user_login).first()
+        user.day_1 = None
+        db.session.commit()
+    else:
+        # Создание состояния кнопок дял нового пользователя
+        new_user_instances = DayInstances(login=user_login)
+        db.session.add(new_user_instances)
+        db.session.commit()
+
 def fill_days_db(user_login, day_goals, goal_target):
-    new_user_goal = DayGoals(login=user_login, total_goal=goal_target, current_sum=0, day_1=day_goals[0].goal,
+    """
+    Создание ежедневных целей пользователя
+    :param user_login: Логин пользователя
+    :param day_goals: Суммы для каждого дня
+    :param goal_target: Общая сумма
+    :return: Создание/обновление записи SQL
+    """
+
+    # Изменение ежедневных целей существующему пользователю
+    if DayGoals.query.filter_by(login=user_login):
+        user = DayGoals.query.filter_by(login=user_login).first()
+        user.day_1 = day_goals[0].goal
+        user.day_2 = day_goals[1].goal
+        user.day_3 = day_goals[2].goal
+        user.day_4 = day_goals[3].goal
+        user.day_5 = day_goals[4].goal
+        user.day_6 = day_goals[5].goal
+        user.day_7 = day_goals[6].goal
+        user.day_8 = day_goals[7].goal
+        user.day_9 = day_goals[8].goal
+        user.day_10 = day_goals[9].goal
+        user.day_11 = day_goals[10].goal
+        user.day_12 = day_goals[11].goal
+        user.day_13 = day_goals[12].goal
+        user.day_14 = day_goals[13].goal
+        user.day_15 = day_goals[14].goal
+        user.day_16 = day_goals[15].goal
+        user.day_17 = day_goals[16].goal
+        user.day_18 = day_goals[17].goal
+        user.day_19 = day_goals[18].goal
+        user.day_20 = day_goals[19].goal
+        user.day_21 = day_goals[20].goal
+        user.day_22 = day_goals[21].goal
+        user.day_23 = day_goals[22].goal
+        user.day_24 = day_goals[23].goal
+        user.day_25 = day_goals[24].goal
+        user.day_26 = day_goals[25].goal
+        user.day_27 = day_goals[26].goal
+        user.day_28 = day_goals[27].goal
+        user.day_29 = day_goals[28].goal
+        user.day_30 = day_goals[29].goal
+        user.day_31 = day_goals[30].goal
+        user.day_32 = day_goals[31].goal
+        user.day_33 = day_goals[32].goal
+        user.day_34 = day_goals[33].goal
+        user.day_35 = day_goals[34].goal
+        user.day_36 = day_goals[35].goal
+        user.day_37 = day_goals[36].goal
+        user.day_38 = day_goals[37].goal
+        user.day_39 = day_goals[38].goal
+        user.day_40 = day_goals[39].goal
+        user.day_41 = day_goals[40].goal
+        user.day_42 = day_goals[41].goal
+        user.day_43 = day_goals[42].goal
+        user.day_44 = day_goals[43].goal
+        user.day_45 = day_goals[44].goal
+        user.day_46 = day_goals[45].goal
+        user.day_47 = day_goals[46].goal
+        user.day_48 = day_goals[47].goal
+        user.day_49 = day_goals[48].goal
+        user.day_50 = day_goals[49].goal
+        user.day_51 = day_goals[50].goal
+        user.day_52 = day_goals[51].goal
+        user.day_53 = day_goals[52].goal
+        user.day_54 = day_goals[53].goal
+        user.day_55 = day_goals[54].goal
+        user.day_56 = day_goals[55].goal
+        user.day_57 = day_goals[56].goal
+        user.day_58 = day_goals[57].goal
+        user.day_59 = day_goals[58].goal
+        user.day_60 = day_goals[59].goal
+        user.day_61 = day_goals[60].goal
+        user.day_62 = day_goals[61].goal
+        user.day_63 = day_goals[62].goal
+        user.day_64 = day_goals[63].goal
+        user.day_65 = day_goals[64].goal
+        user.day_66 = day_goals[65].goal
+        user.day_67 = day_goals[66].goal
+        user.day_68 = day_goals[67].goal
+        user.day_69 = day_goals[68].goal
+        user.day_70 = day_goals[69].goal
+        user.day_71 = day_goals[70].goal
+        user.day_72 = day_goals[71].goal
+        user.day_73 = day_goals[72].goal
+        user.day_74 = day_goals[73].goal
+        user.day_75 = day_goals[74].goal
+        user.day_76 = day_goals[75].goal
+        user.day_77 = day_goals[76].goal
+        user.day_78 = day_goals[77].goal
+        user.day_79 = day_goals[78].goal
+        user.day_80 = day_goals[79].goal
+        user.day_81 = day_goals[80].goal
+        user.day_82 = day_goals[81].goal
+        user.day_83 = day_goals[82].goal
+        user.day_84 = day_goals[83].goal
+        user.day_85 = day_goals[84].goal
+        user.day_86 = day_goals[85].goal
+        user.day_87 = day_goals[86].goal
+        user.day_88 = day_goals[87].goal
+        user.day_89 = day_goals[88].goal
+        user.day_90 = day_goals[89].goal
+        user.day_91 = day_goals[90].goal
+        user.day_92 = day_goals[91].goal
+        user.day_93 = day_goals[92].goal
+        user.day_94 = day_goals[93].goal
+        user.day_95 = day_goals[94].goal
+        user.day_96 = day_goals[95].goal
+        user.day_97 = day_goals[96].goal
+        user.day_98 = day_goals[97].goal
+        user.day_99 = day_goals[98].goal
+        user.day_100 = day_goals[99].goal
+        db.session.commit()
+    else:
+        # Создание ежедневных целей новому пользователю
+        new_user_goal = DayGoals(login=user_login, total_goal=goal_target, current_sum=0, day_1=day_goals[0].goal,
                              day_2=day_goals[1].goal, day_3=day_goals[2].goal, day_4=day_goals[3].goal,
                              day_5=day_goals[4].goal, day_6=day_goals[5].goal, day_7=day_goals[6].goal,
                              day_8=day_goals[7].goal, day_9=day_goals[8].goal, day_10=day_goals[9].goal,
@@ -294,8 +421,8 @@ def fill_days_db(user_login, day_goals, goal_target):
                              day_92=day_goals[91].goal, day_93=day_goals[92].goal, day_94=day_goals[93].goal,
                              day_95=day_goals[94].goal, day_96=day_goals[95].goal, day_97=day_goals[96].goal,
                              day_98=day_goals[97].goal, day_99=day_goals[98].goal, day_100=day_goals[99].goal,)
-    db.session.add(new_user_goal)
-    db.session.commit()
+        db.session.add(new_user_goal)
+        db.session.commit()
 
 def get_day_goals(user_login):
     user = DayGoals.query.filter_by(login=user_login).first()
@@ -438,7 +565,6 @@ def update_day_instance(user_login, buttons_list):
     user.day_98 = buttons_list[97] if buttons_list[97] is not None else user.day_98
     user.day_99 = buttons_list[98] if buttons_list[98] is not None else user.day_99
     user.day_100 = buttons_list[99] if buttons_list[99] is not None else user.day_100
-
     db.session.commit()
 
 

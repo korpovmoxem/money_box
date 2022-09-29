@@ -82,7 +82,6 @@ body {
   transition: 0.2s ease!important;
 }
 
-
 .container {
   justify-content: center;
   font-family: 'Roboto';
@@ -198,6 +197,30 @@ h1, h2 {
 
 .progress {
   margin-top: 30px;
+}
+
+.modal-content {
+  background-color: #FC8A91!important;
+}
+
+.modal-body {
+  border-width: 0px!important;
+}
+
+.btn.btn-secondary {
+  background-color: #EFC454!important;
+  color: #242121 !important;
+  border-width: 0px!important;
+  transition: 0.3s ease!important;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #fadf9a!important;
+  transition: 0.3s ease!important;
+}
+
+.btn-close {
+  color: #242121!important;
 }
 
 @media (max-width: 700px) {
