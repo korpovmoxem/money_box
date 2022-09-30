@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da7ba25f-2cca-46e5-a809-3f7bcd568e0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/money_box.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/money_box.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/money_box/DataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/DataBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/static/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/static/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/static/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/home_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/static/css/money_box.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/money_box.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/templates/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money_box/templates/money_box.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/money_box.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/money_box/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +163,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\esmec\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
+      <option name="SDK_HOME" value="C:\Users\mok\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -238,5 +231,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/routes_py$create_data_base.coverage" NAME="create_data_base Coverage Results" MODIFIED="1664045285228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/money_box" />
+    <SUITE FILE_PATH="coverage/routes_py$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1664582035972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

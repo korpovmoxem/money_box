@@ -258,6 +258,7 @@ def create_day_goals(goal):
 def change_total_goal(total_goal, login):
     user = DayGoals.query.filter_by(login=login).first()
     user.total_goal = total_goal
+    user.current_sum = 0
     db.session.commit()
 
 def fill_day_instances(user_login):
@@ -266,6 +267,105 @@ def fill_day_instances(user_login):
     if DayInstances.query.filter_by(login=user_login):
         user = DayInstances.query.filter_by(login=user_login).first()
         user.day_1 = None
+        user.day_2 = None
+        user.day_3 = None
+        user.day_4 = None
+        user.day_5 = None
+        user.day_6 = None
+        user.day_7 = None
+        user.day_8 = None
+        user.day_9 = None
+        user.day_10 = None
+        user.day_11 = None
+        user.day_12 = None
+        user.day_13 = None
+        user.day_14 = None
+        user.day_15 = None
+        user.day_16 = None
+        user.day_17 = None
+        user.day_18 = None
+        user.day_19 = None
+        user.day_20 = None
+        user.day_21 = None
+        user.day_22 = None
+        user.day_23 = None
+        user.day_24 = None
+        user.day_25 = None
+        user.day_26 = None
+        user.day_27 = None
+        user.day_28 = None
+        user.day_29 = None
+        user.day_30 = None
+        user.day_31 = None
+        user.day_32 = None
+        user.day_33 = None
+        user.day_34 = None
+        user.day_35 = None
+        user.day_36 = None
+        user.day_37 = None
+        user.day_38 = None
+        user.day_39 = None
+        user.day_40 = None
+        user.day_41 = None
+        user.day_42 = None
+        user.day_43 = None
+        user.day_44 = None
+        user.day_45 = None
+        user.day_46 = None
+        user.day_47 = None
+        user.day_48 = None
+        user.day_49 = None
+        user.day_50 = None
+        user.day_51 = None
+        user.day_52 = None
+        user.day_53 = None
+        user.day_54 = None
+        user.day_55 = None
+        user.day_56 = None
+        user.day_57 = None
+        user.day_58 = None
+        user.day_59 = None
+        user.day_60 = None
+        user.day_61 = None
+        user.day_62 = None
+        user.day_63 = None
+        user.day_64 = None
+        user.day_65 = None
+        user.day_66 = None
+        user.day_67 = None
+        user.day_68 = None
+        user.day_69 = None
+        user.day_70 = None
+        user.day_71 = None
+        user.day_72 = None
+        user.day_73 = None
+        user.day_74 = None
+        user.day_75 = None
+        user.day_76 = None
+        user.day_77 = None
+        user.day_78 = None
+        user.day_79 = None
+        user.day_80 = None
+        user.day_81 = None
+        user.day_82 = None
+        user.day_83 = None
+        user.day_84 = None
+        user.day_85 = None
+        user.day_86 = None
+        user.day_87 = None
+        user.day_88 = None
+        user.day_89 = None
+        user.day_90 = None
+        user.day_91 = None
+        user.day_92 = None
+        user.day_93 = None
+        user.day_94 = None
+        user.day_95 = None
+        user.day_96 = None
+        user.day_97 = None
+        user.day_98 = None
+        user.day_99 = None
+        user.day_100 = None
         db.session.commit()
     else:
         # Создание состояния кнопок дял нового пользователя
