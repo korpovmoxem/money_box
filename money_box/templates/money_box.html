@@ -65,7 +65,7 @@
       <div class="change-goal">
       </div>
       <div class="progress-text">
-      <h1 align="center">Твоя копилка</h1>
+      <h1 align="center">Твоя копилка, {{ user_login }}</h1>
       <h2 align="center">Цель: {{ current_goal }}</h2>
     </div>
     <div class="dropdown">
@@ -74,10 +74,24 @@
       </button>
       <ul class="dropdown-menu">
         <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Изменить цель</button></li>
-        <li><a class="dropdown-item" href="#">История</a></li>
+        <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          История
+        </a></li>
         <li><a class="dropdown-item" href="#">Telegram бот</a></li>
-        <li><a class="dropdown-item" href="#">Выйти</a></li>
+        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Выйти</a></li>
       </ul>
+    </div>
+  </div>
+  <!-- История -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">История</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Какой-то текст в качестве заполнителя. В реальной жизни у вас могут быть элементы, которые Вы выбрали. Нравится, текст, изображения, списки и т. д.
+      </div>
     </div>
   </div>
       <div class="progress" style="height: 30px">

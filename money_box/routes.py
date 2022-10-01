@@ -57,6 +57,8 @@ def registration_page():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('money_box'))
     login_email = request.form.get('login')
     password = request.form.get('password')
 
@@ -82,9 +84,9 @@ def login_page():
 
 @app.route('/logout')
 @login_required
-def login_out():
+def logout():
     logout_user()
-    return redirect((url_for('main_page')))
+    return redirect(url_for('home_page'))
 
 
 @app.route('/money_box', methods=['GET', 'POST'])
@@ -139,7 +141,7 @@ def money_box():
         total_goal = 10
     return render_template('money_box.html',
                            display=False, current_sum=current_sum, total_goal=total_goal, progress_percent=current_sum / total_goal * 100,
-                           current_goal=current_goal,
+                           current_goal=current_goal, user_login=user.login,
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],
