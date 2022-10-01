@@ -44,7 +44,7 @@ body {
 }
 
 .dropdown-menu {
-  background-color: rgb(175, 175, 175)!important;
+  background-color: #cea848!important;
 }
 
 .dropdown-menu * ~ *{
@@ -52,7 +52,7 @@ body {
 }
 
 .dropdown-item {
-  background-color: rgb(175, 175, 175)!important;
+  background-color: #cea848!important;
   transition: 0.2s ease!important;
   text-align: center!important;
 }
@@ -103,7 +103,9 @@ body {
   background-color: #EFC454!important;
   background: linear-gradient(to bottom, #f0cb6d, #EFC454);
   border-color: #000!important;
-  color: #000!important;
+  color: #242121!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-weight: 400!important;
 
 }
 
@@ -200,11 +202,39 @@ h1, h2 {
 }
 
 .modal-content {
-  background-color: #FC8A91!important;
+  background-color: rgb(150, 150, 150)!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-weight: 400!important;
+  color: #242121!important;
 }
 
 .modal-body {
   border-width: 0px!important;
+}
+
+.modal_submit_button input {
+  background-color: #FC8A91;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 35px;
+  width: 150px;
+  transition: 0.4s ease;
+}
+
+.modal_submit_button input:hover{
+  background-color: #fff!important;
+  transition: 0,4s ease!important;
+}
+
+.modal-body input {
+  transition: 0.4s ease!important;
+  background-color: #f0f0f0!important;
+  border-width: 0px;  
+}
+
+.modal-body input:hover {
+  transition: 0.4s ease!important;
+  background-color: #fff!important;
 }
 
 .btn.btn-secondary {
