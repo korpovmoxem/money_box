@@ -3,12 +3,18 @@ from flask_login import UserMixin
 from money_box import db, login_manager
 
 class UserAuth(db.Model, UserMixin):
+    """
+    БД с данными пользователей
+    """
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(128), nullable=False, unique=True)
     email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
 
 class DayGoals(db.Model):
+    """
+    БД с целями пользователей, текущей накопленной суммой и значениями для кнопок
+    """
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(80), unique=True, nullable=False)
     total_goal = db.Column(db.Integer, nullable=False)
@@ -119,6 +125,9 @@ class DayGoals(db.Model):
         return '<User %r>' % self.login
 
 class DayInstances(db.Model):
+    """
+    БД с состояниями кнопок (нажата или нет)
+    """
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(80), unique=True, nullable=False)
     day_1 = db.Column(db.Integer)
@@ -229,6 +238,8 @@ class DayInstances(db.Model):
 
 def create_day_goals(goal):
     """
+    Алгоритм создания значения кнопок из цели пользователя
+
     Сумма должна быть кратна 5000
     """
     goal = int(goal)
@@ -256,13 +267,18 @@ def create_day_goals(goal):
     return(days)
 
 def change_total_goal(total_goal, login):
+    """
+    Смена цели пользователя
+    """
     user = DayGoals.query.filter_by(login=login).first()
     user.total_goal = total_goal
     user.current_sum = 0
     db.session.commit()
 
 def fill_day_instances(user_login):
-
+    """
+    Создание состояния кнопок в БД
+    """
     # Обнуление состояния кнопок дял существующего пользователя
     if DayInstances.query.filter_by(login=user_login):
         user = DayInstances.query.filter_by(login=user_login).first()
@@ -381,7 +397,6 @@ def fill_days_db(user_login, day_goals, goal_target):
     :param goal_target: Общая сумма
     :return: Создание/обновление записи SQL
     """
-
     # Изменение ежедневных целей существующему пользователю
     if DayGoals.query.filter_by(login=user_login):
         user = DayGoals.query.filter_by(login=user_login).first()
@@ -667,6 +682,29 @@ def update_day_instance(user_login, buttons_list):
     user.day_100 = buttons_list[99] if buttons_list[99] is not None else user.day_100
     db.session.commit()
 
+def update_current_sum(login):
+    current_sum = 0
+    user = DayInstances.query.filter_by(login=login).first()
+    days = [
+        user.day_1, user.day_2, user.day_3, user.day_4, user.day_5, user.day_6, user.day_7, user.day_8,
+        user.day_9, user.day_10, user.day_11, user.day_12, user.day_13, user.day_14, user.day_15, user.day_16,
+        user.day_17, user.day_18, user.day_19, user.day_20, user.day_21, user.day_22, user.day_23, user.day_24,
+        user.day_25, user.day_26, user.day_27, user.day_28, user.day_29, user.day_30, user.day_31, user.day_32,
+        user.day_33, user.day_34, user.day_35, user.day_36, user.day_37, user.day_38, user.day_39, user.day_40,
+        user.day_41, user.day_42, user.day_43, user.day_44, user.day_45, user.day_46, user.day_47, user.day_48,
+        user.day_49, user.day_50, user.day_51, user.day_52, user.day_53, user.day_54, user.day_55, user.day_56, user.day_57,
+        user.day_58, user.day_59, user.day_60, user.day_61, user.day_62, user.day_63, user.day_64, user.day_65, user.day_66,
+        user.day_67,user.day_68, user.day_69, user.day_70, user.day_71, user.day_72, user.day_73, user.day_74,
+        user.day_75,user.day_76, user.day_77, user.day_78, user.day_79, user.day_80, user.day_81, user.day_82,
+        user.day_83,user.day_84, user.day_85, user.day_86, user.day_87, user.day_88, user.day_89, user.day_90,
+        user.day_91,user.day_92, user.day_93, user.day_94, user.day_95, user.day_96, user.day_97, user.day_98,
+        user.day_99, user.day_100
+    ]
+    for day in days:
+        if day:
+            current_sum += day
+    user = DayGoals.query.filter_by(login=login).first()
+    user.current_sum = current_sum
 
 @login_manager.user_loader
 def load_user(user_id):

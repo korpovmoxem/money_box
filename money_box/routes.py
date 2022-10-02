@@ -4,7 +4,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
 from money_box.tools import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
-    , get_day_instances, get_day_goals, update_day_instance, change_total_goal
+    , get_day_instances, get_day_goals, update_day_instance, change_total_goal, update_current_sum
 
 
 @app.route('/')
@@ -99,18 +99,19 @@ def money_box():
     new_goal_target = request.form.get('new_goal_target')
 
     try:
+        # Регистрация нажатия кнопки
         if request.method == 'POST':
             buttons_list = []
             for i in range(1, 101):
-                day_instance = request.form.get(f"day_{i}_button")
+                day_value = request.form.get(f"day_{i}_button")
                 user_sum = DayGoals.query.filter_by(login=user.login).first()
-                if day_instance is not None:
-                    user_sum.current_sum += int(day_instance)
-                buttons_list.append(day_instance)
+                buttons_list.append(day_value)
+            update_current_sum(user.login)
             update_day_instance(user.login, buttons_list)
+
     except:
         pass
-
+    # Создание цели для нового пользователя
     if goal_target:
         if not goal_target.isdigit():
             flash('Необходимо ввести число')
@@ -193,7 +194,7 @@ def money_box():
                            day_43_goal=day_goals[42], day_44_goal=day_goals[43], day_45_goal=day_goals[44],
                            day_46_goal=day_goals[45], day_47_goal=day_goals[46], day_48_goal=day_goals[47],
                            day_49_goal=day_goals[48], day_50_goal=day_goals[49], day_51_goal=day_goals[50],
-                           day_52_goal=day_goals[51], day_53_goal=day_goals[52], day_54_goal=day_goals[51],
+                           day_52_goal=day_goals[51], day_53_goal=day_goals[52], day_54_goal=day_goals[53],
                            day_55_goal=day_goals[54], day_56_goal=day_goals[55], day_57_goal=day_goals[56],
                            day_58_goal=day_goals[57], day_59_goal=day_goals[58], day_60_goal=day_goals[59],
                            day_61_goal=day_goals[60], day_62_goal=day_goals[61], day_63_goal=day_goals[62],
@@ -207,7 +208,7 @@ def money_box():
                            day_85_goal=day_goals[84], day_86_goal=day_goals[85], day_87_goal=day_goals[86],
                            day_88_goal=day_goals[87], day_89_goal=day_goals[88], day_90_goal=day_goals[89],
                            day_91_goal=day_goals[90], day_92_goal=day_goals[91], day_93_goal=day_goals[92],
-                           day_94_goal=day_goals[93], day_95_goal=day_goals[94], day_96_goal=day_goals[97],
+                           day_94_goal=day_goals[93], day_95_goal=day_goals[94], day_96_goal=day_goals[95],
                            day_97_goal=day_goals[96], day_98_goal=day_goals[97], day_99_goal=day_goals[98],
                            day_100_goal=day_goals[99],
                            )
