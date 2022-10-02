@@ -4,7 +4,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 from money_box import app, db
 from money_box.tools import UserAuth, DayGoals, DayInstances, create_day_goals, fill_days_db, fill_day_instances\
-    , get_day_instances, get_day_goals, update_day_instance, change_total_goal, update_current_sum
+    , get_day_instances, get_day_goals, update_day_instance, change_total_goal, update_current_sum, write_log,\
+    clear_logs, get_logs
 
 
 @app.route('/')
@@ -106,8 +107,11 @@ def money_box():
                 day_value = request.form.get(f"day_{i}_button")
                 user_sum = DayGoals.query.filter_by(login=user.login).first()
                 buttons_list.append(day_value)
+                if day_value:
+                    write_log(user.login, day_value)
             update_current_sum(user.login)
             update_day_instance(user.login, buttons_list)
+
 
     except:
         pass
@@ -127,6 +131,7 @@ def money_box():
         fill_days_db(user.login, day_goals, new_goal_target)
         fill_day_instances(user.login)
         current_goal = new_goal_target
+        clear_logs(user.login)
 
     if not DayGoals.query.filter_by(login=user.login).first():
         return render_template('money_box.html',
@@ -134,6 +139,7 @@ def money_box():
 
     day_instances = get_day_instances(user.login)
     day_goals = get_day_goals(user.login)
+    user_logs = get_logs(user.login)
     try:
         current_sum = DayGoals.query.filter_by(login=user.login).first().current_sum
         total_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
@@ -142,7 +148,7 @@ def money_box():
         total_goal = 10
     return render_template('money_box.html',
                            display=False, current_sum=current_sum, total_goal=total_goal, progress_percent=current_sum / total_goal * 100,
-                           current_goal=current_goal, user_login=user.login,
+                           current_goal=current_goal, user_login=user.login, user_logs=user_logs,
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],

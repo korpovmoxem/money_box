@@ -1,6 +1,9 @@
+from datetime import datetime
+
 from flask_login import UserMixin
 
 from money_box import db, login_manager
+
 
 class UserAuth(db.Model, UserMixin):
     """
@@ -10,6 +13,7 @@ class UserAuth(db.Model, UserMixin):
     login = db.Column(db.String(128), nullable=False, unique=True)
     email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
+
 
 class DayGoals(db.Model):
     """
@@ -49,7 +53,6 @@ class DayGoals(db.Model):
     day_28 = db.Column(db.Integer)
     day_29 = db.Column(db.Integer)
     day_30 = db.Column(db.Integer)
-    day_31 = db.Column(db.Integer)
     day_31 = db.Column(db.Integer)
     day_32 = db.Column(db.Integer)
     day_33 = db.Column(db.Integer)
@@ -123,6 +126,7 @@ class DayGoals(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.login
+
 
 class DayInstances(db.Model):
     """
@@ -236,6 +240,654 @@ class DayInstances(db.Model):
     def __repr__(self):
         return '<User %r>' % self.login
 
+
+class UserLogs(db.Model):
+    """
+    БД с логами пользователя (история нажатия кнопок)
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    login = db.Column(db.String(128), nullable=False, unique=True)
+    log_1 = db.Column(db.String(128))
+    log_2 = db.Column(db.String(128))
+    log_3 = db.Column(db.String(128))
+    log_4 = db.Column(db.String(128))
+    log_5 = db.Column(db.String(128))
+    log_6 = db.Column(db.String(128))
+    log_7 = db.Column(db.String(128))
+    log_8 = db.Column(db.String(128))
+    log_9 = db.Column(db.String(128))
+    log_10 = db.Column(db.String(128))
+    log_11 = db.Column(db.String(128))
+    log_12 = db.Column(db.String(128))
+    log_13 = db.Column(db.String(128))
+    log_14 = db.Column(db.String(128))
+    log_15 = db.Column(db.String(128))
+    log_16 = db.Column(db.String(128))
+    log_17 = db.Column(db.String(128))
+    log_18 = db.Column(db.String(128))
+    log_19 = db.Column(db.String(128))
+    log_20 = db.Column(db.String(128))
+    log_21 = db.Column(db.String(128))
+    log_22 = db.Column(db.String(128))
+    log_23 = db.Column(db.String(128))
+    log_24 = db.Column(db.String(128))
+    log_25 = db.Column(db.String(128))
+    log_26 = db.Column(db.String(128))
+    log_27 = db.Column(db.String(128))
+    log_28 = db.Column(db.String(128))
+    log_29 = db.Column(db.String(128))
+    log_30 = db.Column(db.String(128))
+    log_31 = db.Column(db.String(128))
+    log_32 = db.Column(db.String(128))
+    log_33 = db.Column(db.String(128))
+    log_34 = db.Column(db.String(128))
+    log_35 = db.Column(db.String(128))
+    log_36 = db.Column(db.String(128))
+    log_37 = db.Column(db.String(128))
+    log_38 = db.Column(db.String(128))
+    log_39 = db.Column(db.String(128))
+    log_40 = db.Column(db.String(128))
+    log_41 = db.Column(db.String(128))
+    log_42 = db.Column(db.String(128))
+    log_43 = db.Column(db.String(128))
+    log_44 = db.Column(db.String(128))
+    log_45 = db.Column(db.String(128))
+    log_46 = db.Column(db.String(128))
+    log_47 = db.Column(db.String(128))
+    log_48 = db.Column(db.String(128))
+    log_49 = db.Column(db.String(128))
+    log_50 = db.Column(db.String(128))
+    log_51 = db.Column(db.String(128))
+    log_52 = db.Column(db.String(128))
+    log_53 = db.Column(db.String(128))
+    log_54 = db.Column(db.String(128))
+    log_55 = db.Column(db.String(128))
+    log_56 = db.Column(db.String(128))
+    log_57 = db.Column(db.String(128))
+    log_58 = db.Column(db.String(128))
+    log_59 = db.Column(db.String(128))
+    log_60 = db.Column(db.String(128))
+    log_61 = db.Column(db.String(128))
+    log_62 = db.Column(db.String(128))
+    log_63 = db.Column(db.String(128))
+    log_64 = db.Column(db.String(128))
+    log_65 = db.Column(db.String(128))
+    log_66 = db.Column(db.String(128))
+    log_67 = db.Column(db.String(128))
+    log_68 = db.Column(db.String(128))
+    log_69 = db.Column(db.String(128))
+    log_70 = db.Column(db.String(128))
+    log_71 = db.Column(db.String(128))
+    log_72 = db.Column(db.String(128))
+    log_73 = db.Column(db.String(128))
+    log_74 = db.Column(db.String(128))
+    log_75 = db.Column(db.String(128))
+    log_76 = db.Column(db.String(128))
+    log_77 = db.Column(db.String(128))
+    log_78 = db.Column(db.String(128))
+    log_79 = db.Column(db.String(128))
+    log_80 = db.Column(db.String(128))
+    log_81 = db.Column(db.String(128))
+    log_82 = db.Column(db.String(128))
+    log_83 = db.Column(db.String(128))
+    log_84 = db.Column(db.String(128))
+    log_85 = db.Column(db.String(128))
+    log_86 = db.Column(db.String(128))
+    log_87 = db.Column(db.String(128))
+    log_88 = db.Column(db.String(128))
+    log_89 = db.Column(db.String(128))
+    log_90 = db.Column(db.String(128))
+    log_91 = db.Column(db.String(128))
+    log_92 = db.Column(db.String(128))
+    log_93 = db.Column(db.String(128))
+    log_94 = db.Column(db.String(128))
+    log_95 = db.Column(db.String(128))
+    log_96 = db.Column(db.String(128))
+    log_97 = db.Column(db.String(128))
+    log_98 = db.Column(db.String(128))
+    log_99 = db.Column(db.String(128))
+    log_100 = db.Column(db.String(128))
+
+
+def write_log(login, value):
+    user = UserLogs.query.filter_by(login=login).first()
+    log = f"{datetime.now().day}.{datetime.now().month}.{datetime.now().year}: {value}"
+    if not user:
+        new_user_logs = UserLogs(login=login)
+        db.session.add(new_user_logs)
+        db.session.commit()
+        user = UserLogs.query.filter_by(login=login).first()
+    if not user.log_1:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_2:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_3:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_4:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_5:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_6:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_7:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_8:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_9:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_10:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_11:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_12:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_13:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_14:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_15:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_16:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_17:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_18:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_19:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_20:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_21:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_22:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_23:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_24:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_25:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_26:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_27:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_28:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_29:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_30:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_31:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_32:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_33:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_34:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_35:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_36:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_37:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_38:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_39:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_40:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_41:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_42:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_43:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_44:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_45:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_46:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_47:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_48:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_49:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_50:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_51:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_52:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_53:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_54:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_55:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_56:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_57:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_58:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_59:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_60:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_61:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_62:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_63:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_64:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_65:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_66:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_67:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_68:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_69:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_70:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_71:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_72:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_73:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_74:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_75:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_76:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_77:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_78:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_79:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_80:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_81:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_82:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_83:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_84:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_85:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_86:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_87:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_88:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_89:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_90:
+        user.log_10 = log
+        db.session.commit()
+        return
+    elif not user.log_91:
+        user.log_1 = log
+        db.session.commit()
+        return
+    elif not user.log_92:
+        user.log_2 = log
+        db.session.commit()
+        return
+    elif not user.log_93:
+        user.log_3 = log
+        db.session.commit()
+        return
+    elif not user.log_94:
+        user.log_4 = log
+        db.session.commit()
+        return
+    elif not user.log_95:
+        user.log_5 = log
+        db.session.commit()
+        return
+    elif not user.log_96:
+        user.log_6 = log
+        db.session.commit()
+        return
+    elif not user.log_97:
+        user.log_7 = log
+        db.session.commit()
+        return
+    elif not user.log_98:
+        user.log_8 = log
+        db.session.commit()
+        return
+    elif not user.log_99:
+        user.log_9 = log
+        db.session.commit()
+        return
+    elif not user.log_100:
+        user.log_10 = log
+        db.session.commit()
+        return
+
+
+def clear_logs(login):
+    user = UserLogs.query.filter_by(login=login).first()
+    user.log_1 = None
+    user.log_2 = None
+    user.log_3 = None
+    user.log_4 = None
+    user.log_5 = None
+    user.log_6 = None
+    user.log_7 = None
+    user.log_8 = None
+    user.log_9 = None
+    user.log_10 = None
+    user.log_11 = None
+    user.log_12 = None
+    user.log_13 = None
+    user.log_14 = None
+    user.log_15 = None
+    user.log_16 = None
+    user.log_17 = None
+    user.log_18 = None
+    user.log_19 = None
+    user.log_20 = None
+    user.log_21 = None
+    user.log_22 = None
+    user.log_23 = None
+    user.log_24 = None
+    user.log_25 = None
+    user.log_26 = None
+    user.log_27 = None
+    user.log_28 = None
+    user.log_29 = None
+    user.log_30 = None
+    user.log_31 = None
+    user.log_32 = None
+    user.log_33 = None
+    user.log_34 = None
+    user.log_35 = None
+    user.log_36 = None
+    user.log_37 = None
+    user.log_38 = None
+    user.log_39 = None
+    user.log_40 = None
+    user.log_41 = None
+    user.log_42 = None
+    user.log_43 = None
+    user.log_44 = None
+    user.log_45 = None
+    user.log_46 = None
+    user.log_47 = None
+    user.log_48 = None
+    user.log_49 = None
+    user.log_50 = None
+    user.log_51 = None
+    user.log_52 = None
+    user.log_53 = None
+    user.log_54 = None
+    user.log_55 = None
+    user.log_56 = None
+    user.log_57 = None
+    user.log_58 = None
+    user.log_59 = None
+    user.log_60 = None
+    user.log_61 = None
+    user.log_62 = None
+    user.log_63 = None
+    user.log_64 = None
+    user.log_65 = None
+    user.log_66 = None
+    user.log_67 = None
+    user.log_68 = None
+    user.log_69 = None
+    user.log_70 = None
+    user.log_71 = None
+    user.log_72 = None
+    user.log_73 = None
+    user.log_74 = None
+    user.log_75 = None
+    user.log_76 = None
+    user.log_77 = None
+    user.log_78 = None
+    user.log_79 = None
+    user.log_80 = None
+    user.log_81 = None
+    user.log_82 = None
+    user.log_83 = None
+    user.log_84 = None
+    user.log_85 = None
+    user.log_86 = None
+    user.log_87 = None
+    user.log_88 = None
+    user.log_89 = None
+    user.log_90 = None
+    user.log_91 = None
+    user.log_92 = None
+    user.log_93 = None
+    user.log_94 = None
+    user.log_95 = None
+    user.log_96 = None
+    user.log_97 = None
+    user.log_98 = None
+    user.log_99 = None
+    user.log_100 = None
+
+
+def get_logs(login):
+    user = UserLogs.query.filter_by(login=login).first()
+    user_logs = []
+    if user.log_1:
+        user_logs.append(user.log_1)
+    if user.log_2:
+        user_logs.append(user.log_2)
+    if user.log_3:
+        user_logs.append(user.log_3)
+    if user.log_4:
+        user_logs.append(user.log_4)
+    if user.log_5:
+        user_logs.append(user.log_5)
+    if user.log_6:
+        user_logs.append(user.log_6)
+    if user.log_7:
+        user_logs.append(user.log_7)
+    if user.log_8:
+        user_logs.append(user.log_8)
+    if user.log_9:
+        user_logs.append(user.log_9)
+    if user.log_10:
+        user_logs.append(user.log_10)
+    return user_logs
+
 def create_day_goals(goal):
     """
     Алгоритм создания значения кнопок из цели пользователя
@@ -266,6 +918,7 @@ def create_day_goals(goal):
 
     return(days)
 
+
 def change_total_goal(total_goal, login):
     """
     Смена цели пользователя
@@ -274,6 +927,7 @@ def change_total_goal(total_goal, login):
     user.total_goal = total_goal
     user.current_sum = 0
     db.session.commit()
+
 
 def fill_day_instances(user_login):
     """
@@ -388,6 +1042,7 @@ def fill_day_instances(user_login):
         new_user_instances = DayInstances(login=user_login)
         db.session.add(new_user_instances)
         db.session.commit()
+
 
 def fill_days_db(user_login, day_goals, goal_target):
     """
@@ -539,6 +1194,7 @@ def fill_days_db(user_login, day_goals, goal_target):
         db.session.add(new_user_goal)
         db.session.commit()
 
+
 def get_day_goals(user_login):
     user = DayGoals.query.filter_by(login=user_login).first()
     return [
@@ -559,6 +1215,7 @@ def get_day_goals(user_login):
         user.day_99, user.day_100
     ]
 
+
 def get_day_instances(user_login):
     user = DayInstances.query.filter_by(login=user_login).first()
     return [
@@ -576,6 +1233,7 @@ def get_day_instances(user_login):
         user.day_91,user.day_92, user.day_93, user.day_94, user.day_95, user.day_96, user.day_97, user.day_98,
         user.day_99, user.day_100
     ]
+
 
 def update_day_instance(user_login, buttons_list):
     user = DayInstances.query.filter_by(login=user_login).first()
@@ -682,6 +1340,7 @@ def update_day_instance(user_login, buttons_list):
     user.day_100 = buttons_list[99] if buttons_list[99] is not None else user.day_100
     db.session.commit()
 
+
 def update_current_sum(login):
     current_sum = 0
     user = DayInstances.query.filter_by(login=login).first()
@@ -705,6 +1364,7 @@ def update_current_sum(login):
             current_sum += day
     user = DayGoals.query.filter_by(login=login).first()
     user.current_sum = current_sum
+
 
 @login_manager.user_loader
 def load_user(user_id):

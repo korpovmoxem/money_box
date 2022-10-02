@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da7ba25f-2cca-46e5-a809-3f7bcd568e0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f6fe4b5-029a-49c6-b1b5-3adfc9984a1d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f6fe4b5-029a-49c6-b1b5-3adfc9984a1d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/money_box/DataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/DataBase.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/money_box/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/templates/money_box.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/money_box.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/money_box/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +58,7 @@
       <recent name="C:\Users\esmec\Documents\GitHub\money_box\money_box\static\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.runserver">
     <configuration name="create_data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="money_box" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="df" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="money_box" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,7 +104,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/money_box/data_base.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/money_box/df.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,19 +190,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.df" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.create_data_base" />
-      <item itemvalue="Python.data_base" />
       <item itemvalue="Python.routes" />
       <item itemvalue="Python.runserver" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.runserver" />
         <item itemvalue="Python.create_data_base" />
+        <item itemvalue="Python.df" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.routes" />
-        <item itemvalue="Python.data_base" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +217,7 @@
       <workItem from="1663869362428" duration="2336000" />
       <workItem from="1664038250638" duration="5833000" />
       <workItem from="1664630079031" duration="3255000" />
-      <workItem from="1664709646016" duration="5608000" />
+      <workItem from="1664709646016" duration="16212000" />
     </task>
     <servers />
   </component>
@@ -234,8 +236,9 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/routes_py$df.coverage" NAME="df Coverage Results" MODIFIED="1664739176342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/money_box" />
     <SUITE FILE_PATH="coverage/routes_py$test.coverage" NAME="test Coverage Results" MODIFIED="1664714535927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/money_box" />
-    <SUITE FILE_PATH="coverage/routes_py$create_data_base.coverage" NAME="create_data_base Coverage Results" MODIFIED="1664045285228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/money_box" />
-    <SUITE FILE_PATH="coverage/routes_py$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1664714220099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/routes_py$create_data_base.coverage" NAME="create_data_base Coverage Results" MODIFIED="1664741041892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/money_box" />
+    <SUITE FILE_PATH="coverage/routes_py$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1664743956772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
