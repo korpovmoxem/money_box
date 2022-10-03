@@ -3,6 +3,14 @@
     justify-content: center;
 }
   
+::-webkit-scrollbar {
+    background-color: #242121;
+  }
+  
+::-webkit-scrollbar-thumb {
+background-color: rgb(50, 50, 50)
+}
+
 .home {
     padding-top: 130px;
     padding-bottom: 175px;

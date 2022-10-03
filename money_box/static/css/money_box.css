@@ -9,6 +9,14 @@ body {
   background-color: #242121!important;
 }
 
+::-webkit-scrollbar {
+  background-color: #242121;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(50, 50, 50)
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -34,6 +42,13 @@ body {
 .change-goal:hover, .logout:hover {
   transition: 0.2 ease;
   height: 60px;
+}
+
+.progress-bar{
+  font-family: 'Roboto', sans-serif!important;
+  font-weight: 500!important;
+  font-size: 20px!important;
+  color: #242121!important;
 }
 
 .dropdown-toggle {
@@ -128,44 +143,69 @@ body {
 }
 
 .popup {
-  width: 1000px;
-  height: 600px;
+  max-width: 450px;
+  max-height: 225px;
   text-align: center;
-  padding: 15px;
-  border: 3px solid #0000cc;
+  padding: 10px;
   border-radius: 10px;
-  color: #0000cc;
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 50%;
   left: 0;
-  margin: auto;
-  background-color: white;
-  font-size: 36px;
+  margin: auto;  
+  background-color: rgb(150, 150, 150)!important;
 }
 
 .popup_buttons {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 7%;
+  margin-top: 15px;
 }
 
 .popup_text {
+  font-size: 20px;
+  color: #242121!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-weight: 400!important;
+}
+
+.create_target_button {
+  display: flex;
+  justify-content: center;
+}
+
+.create_target_button input{
   position: absolute;
-  right: 0;
-  left: 0;
-  top: 7%;
+  bottom: 0;
+  background-color: #EFC454;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 35px;
+  width: 175px;
+  transition: 0.4s ease;
+  margin-bottom: 5px;
+}
+
+.create_target_button input:hover {
+  background-color: #fff!important;
+  transition: 0,4s ease!important;
 }
 
 .flash_message {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 120%;
-  font-size: 25px;
-  color: red;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.goal_target input {
+  margin-top: 15px;
+  transition: 0.4s ease!important;
+  background-color: #f0f0f0!important;
+  border-width: 0px; 
+}
+
+.goal_target input:hover {
+  background-color: #fff!important;
+  transition: 0,4s ease!important;
 }
 
 .money-box-bg-img {
@@ -243,6 +283,21 @@ h1, h2 {
 
 .offcanvas {
   background-color: #fc8a92dc!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-weight: 400!important;
+  font-size: 20px!important;
+}
+
+.offcanvas-header {
+  background-color: #b3656bdc;
+}
+
+.log_table {
+  width: 100%;
+}
+
+.log_value {
+  text-align: center;
 }
 
 .btn.btn-secondary {
@@ -259,15 +314,4 @@ h1, h2 {
 
 .btn-close {
   color: #242121!important;
-}
-
-@media (max-width: 700px) {
-  .title {
-      flex-direction: column;
-  }
-
-  .dropdown-menu {
-    margin-top: 20px!important;
-  }
-
 }

@@ -10,12 +10,12 @@ from money_box.tools import UserAuth, DayGoals, DayInstances, create_day_goals, 
 
 @app.route('/')
 def home_page():
-    return render_template('home_page.html')
+    return render_template('home_page.html', counter=UserAuth.query.count())
 
 
 @app.route('/info')
 def info_page():
-    return render_template('info_page.html')
+    return render_template('info_page.html', counter=UserAuth.query.count())
 
 
 @app.route('/registration', methods=['GET', 'POST'])
@@ -36,7 +36,7 @@ def registration_page():
             flash('Длина логина должна быть не меньше 5 символов')
         elif len(password) < 6:
             flash('Длина пароля должна быть не меньше 6 символов')
-            return render_template('registration_page.html')
+            return render_template('registration_page.html', counter=UserAuth.query.count())
         elif UserAuth.query.filter_by(email=email).first():
             flash('Пользователь с таким email уже существует')
         elif UserAuth.query.filter_by(login=login).first():
@@ -49,11 +49,12 @@ def registration_page():
             new_user = UserAuth(login=login, email=email, password=hash_password)
             db.session.add(new_user)
             db.session.commit()
+            logout_user()
 
             return redirect(url_for('login_page'))
-        return render_template('registration_page.html')
+        return render_template('registration_page.html', counter=UserAuth.query.count())
     else:
-        return render_template('registration_page.html')
+        return render_template('registration_page.html', counter=UserAuth.query.count())
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -80,7 +81,7 @@ def login_page():
                     flash('Логин/email или пароль неверны')
         else:
             flash('Необходимо заполнить поля "Логин" и "Пароль"')
-    return render_template('login_page.html')
+    return render_template('login_page.html', counter=UserAuth.query.count())
 
 
 @app.route('/logout')
@@ -96,7 +97,6 @@ def money_box():
     current_user_id = current_user.get_id()
     user = UserAuth.query.filter_by(id=current_user_id).first()
     goal_target = request.form.get('goal_target')
-    current_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
     new_goal_target = request.form.get('new_goal_target')
 
     try:
@@ -120,9 +120,14 @@ def money_box():
         if not goal_target.isdigit():
             flash('Необходимо ввести число')
             return render_template('money_box.html',
-                            display=True)
+                            display=True, counter=UserAuth.query.count())
+        elif int(goal_target) < 10000:
+            flash('Число должно быть больше или равно 10000')
+            return render_template('money_box.html',
+                                   display=True, counter=UserAuth.query.count())
         day_goals = create_day_goals(goal_target)
         fill_days_db(user.login, day_goals, goal_target)
+        fill_day_instances(user.login)
 
     # Изменение цели
     elif new_goal_target:
@@ -135,7 +140,7 @@ def money_box():
 
     if not DayGoals.query.filter_by(login=user.login).first():
         return render_template('money_box.html',
-                               display=True)
+                               display=True, counter=UserAuth.query.count())
 
     day_instances = get_day_instances(user.login)
     day_goals = get_day_goals(user.login)
@@ -146,9 +151,10 @@ def money_box():
     except AttributeError:
         current_sum = 1
         total_goal = 10
+    current_goal = DayGoals.query.filter_by(login=user.login).first().total_goal
     return render_template('money_box.html',
                            display=False, current_sum=current_sum, total_goal=total_goal, progress_percent=current_sum / total_goal * 100,
-                           current_goal=current_goal, user_login=user.login, user_logs=user_logs,
+                           current_goal=current_goal, user_login=user.login, user_logs=user_logs, counter=UserAuth.query.count(),
                            day_1_instance=day_instances[0], day_2_instance=day_instances[1], day_3_instance=day_instances[2],
                            day_4_instance=day_instances[3], day_5_instance=day_instances[4], day_6_instance=day_instances[5],
                            day_7_instance=day_instances[6], day_8_instance=day_instances[7], day_9_instance=day_instances[8],

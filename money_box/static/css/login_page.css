@@ -1,10 +1,17 @@
 body {
   font-family: 'Roboto', sans-serif;
-  min-height: 100%;
   font-weight: 400;
   font-size: 20px;
   background-size: cover;
   background-color: #242121!important;
+}
+
+::-webkit-scrollbar {
+  background-color: #242121;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(50, 50, 50)
 }
 
 .container {
@@ -67,7 +74,7 @@ body {
   border-radius: 5px;
   border-width: 0px;
   min-height: 35px;
-  min-width: 250px;
+  width: 250px;
   text-align: center;
   transition: 0.4s ease;
   background-color: #f0f0f0;
@@ -148,4 +155,6 @@ input:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+
 
