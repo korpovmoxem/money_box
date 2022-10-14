@@ -63,6 +63,8 @@ def login_page():
         return redirect(url_for('money_box'))
     login_email = request.form.get('login')
     password = request.form.get('password')
+    reset_password_button = request.form.get('reset-password-button')
+    reset_password_email = request.form.get('reset-password-email')
 
     if request.method == 'POST':
         if login_email and password:
@@ -79,8 +81,13 @@ def login_page():
                     return redirect(url_for('money_box'))
                 else:
                     flash('Логин/email или пароль неверны')
+        # Восстановление пароля
+        elif reset_password_button:
+            validate_reset_password_email = UserAuth.query.filter_by(email=reset_password_email).first()
+            if validate_reset_password_email:
+                pass
         else:
-            flash('Необходимо заполнить поля "Логин" и "Пароль"')
+            flash('Необходимо заполнить все поля')
     return render_template('login_page.html', counter=UserAuth.query.count())
 
 

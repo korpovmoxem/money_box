@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da7ba25f-2cca-46e5-a809-3f7bcd568e0e" name="Changes" comment="" />
+    <list default="true" id="da7ba25f-2cca-46e5-a809-3f7bcd568e0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/DataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/DataBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/static/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/home_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/static/css/login_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/static/css/login_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money_box/templates/login_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/money_box/templates/login_page.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +58,7 @@
       <recent name="C:\Users\esmec\Documents\GitHub\money_box\money_box\static\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.runserver">
+  <component name="RunManager" selected="Python.create_data_base">
     <configuration name="create_data_base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="money_box" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,9 +66,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\mok\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/money_box" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -191,8 +198,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.runserver" />
         <item itemvalue="Python.create_data_base" />
+        <item itemvalue="Python.runserver" />
         <item itemvalue="Python.df" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.routes" />
